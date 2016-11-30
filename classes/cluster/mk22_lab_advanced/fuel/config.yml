@@ -3,7 +3,7 @@ classes:
 - system.linux.system.single
 - system.linux.system.repo.tcp_salt
 - system.openssh.client.lab
-- system.salt.master.pkg
+- system.salt.master.git
 - system.reclass.storage.salt
 - system.salt.minion.pki.authority
 - system.salt.minion.pki.certificate
@@ -18,8 +18,8 @@ classes:
 - cluster.mk22_lab_advanced
 parameters:
   _param:
-    reclass_data_repository: "git@github.com:Mirantis/mk-lab-salt-model.git"
-    reclass_data_revision: master
+    reclass_data_repository: "git@github.com:dkalashnik/mk-lab-salt-model.git"
+    reclass_data_revision: mk22_stacklight_basic
     reclass_config_master: 192.168.10.100
     single_address: 172.16.10.100
     salt_master_host: 127.0.0.1
