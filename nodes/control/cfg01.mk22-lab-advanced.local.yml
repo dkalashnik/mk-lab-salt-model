@@ -5,7 +5,7 @@ classes:
 parameters:
   _param:
     linux_system_codename: xenial
-    reclass_data_revision: mk22_lab_advanced
+    reclass_data_revision: mk22_stacklight_basic
   linux:
     system:
       name: cfg01
