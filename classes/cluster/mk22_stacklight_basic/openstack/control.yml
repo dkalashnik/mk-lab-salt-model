@@ -2,6 +2,7 @@ classes:
 - system.linux.system.lowmem
 - system.linux.system.repo.contrail
 - system.linux.system.repo.mos9
+- system.linux.system.repo.tcp_extra
 - system.memcached.server.single
 - system.rabbitmq.server.cluster
 - system.rabbitmq.server.vhost.openstack
@@ -12,7 +13,11 @@ classes:
 - system.cinder.control.cluster
 - system.heat.server.cluster
 - system.opencontrail.control.cluster
+- system.aodh.server.cluster
+- system.ceilometer.server.cluster
+- system.heka.ceilometer_collector.single
 - system.galera.server.cluster
+- system.galera.server.database.aodh
 - system.galera.server.database.ceilometer
 - system.galera.server.database.cinder
 - system.galera.server.database.glance
@@ -44,12 +49,17 @@ parameters:
   keystone:
     server:
       admin_email: ${_param:admin_email}
+      notification: true
   glance:
     server:
       storage:
         engine: file
       images: []
       workers: 1
+      notification: true
+  heat:
+    server:
+      notification: true
   nova:
     controller:
       networking: contrail
@@ -66,6 +76,7 @@ parameters:
         - host: 127.0.0.1
           port: 11211
       workers: 1
+      notification: true
   neutron:
     server:
       plugin: contrail
@@ -73,6 +84,7 @@ parameters:
       public_networks: []
       contrail:
         version: ${_param:opencontrail_version}
+      notification: true
   cinder:
     volume:
       notification: true

@@ -1,6 +1,8 @@
 classes:
+- system.keystone.client.service.aodh
 - system.keystone.client.service.cinder
 - system.keystone.client.service.cinder2
+- system.keystone.client.service.ceilometer
 - system.keystone.client.service.glance
 - system.keystone.client.service.heat
 - system.keystone.client.service.heat-cfn
